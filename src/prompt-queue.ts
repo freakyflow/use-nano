@@ -2,9 +2,17 @@ import Queue from 'queue';
 
 type StreamCallback = (chunk: string) => void;
 
-export class PromptQueue {
+class PromptQueue {
     private q = new Queue({ results: [], autostart: true, concurrency: 1 });
     private session: any = null;
+
+    private static instance: PromptQueue;
+    static getInstance() {
+        if (!PromptQueue.instance) {
+            PromptQueue.instance = new PromptQueue();
+        }
+        return PromptQueue.instance;
+    }
 
     async init() {
         const canCreate = await window.ai.canCreateTextSession();
@@ -39,3 +47,5 @@ export class PromptQueue {
         this.q.end();
     }
 }
+
+export const promptQueue = PromptQueue.getInstance();
