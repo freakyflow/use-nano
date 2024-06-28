@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "./dist",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": [
+            "ES2015",
+            "DOM"
+        ], // Add ES2015 here
+        "jsx": "react" // This was added earlier
+    },
+    "include": [
+        "src"
+    ]
+}

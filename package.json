@@ -1,0 +1,26 @@
+{
+  "name": "use-nano",
+  "version": "1.0.0",
+  "description": "A custom hook to get output from a local LLM as tokens are generated.",
+  "main": "dist/use-nano.js",
+  "types": "dist/use-nano.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "LLM"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0"
+  }
+}
