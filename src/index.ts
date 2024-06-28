@@ -1,2 +1,2 @@
 export { useNano } from './use-nano';
-export { PromptQueue } from './use-queue';
+export { PromptQueue } from './prompt-queue';
