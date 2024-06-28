@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react"
-import { streamPrompt } from "./stream-prompt"
+import { useEffect, useState } from "react";
 
 /**
  * 
@@ -21,19 +20,20 @@ import { streamPrompt } from "./stream-prompt"
  * }
  * ```
  */
-export const useNano = (prompt:string) => { 
+export const useNano = (prompt: string) => {
     const [output, setOutput] = useState("")
 
-    useEffect(() => { 
+    useEffect(() => {
         const go = async () => {
-            const stream = await streamPrompt(prompt)
+            const session = await window.ai.createTextSession();
+            const stream = session.promptStreaming(prompt);
             for await (const chunk of stream as any) {
-                setOutput(chunk)
+                setOutput(chunk);
             }
         }
         go()
     }, [prompt])
 
 
-  return output;
+    return output;
 };
