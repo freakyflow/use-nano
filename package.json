@@ -1,7 +1,7 @@
 {
   "name": "use-nano",
   "version": "1.0.0",
-  "description": "A custom hook to get output from a local LLM as tokens are generated.",
+  "description": "A custom hook to get output from local in browser Gemini Nano LLM as tokens are generated.",
   "main": "dist/use-nano.js",
   "types": "dist/use-nano.d.ts",
   "scripts": {
@@ -12,7 +12,7 @@
     "hook",
     "LLM"
   ],
-  "author": "Your Name",
+  "author": "Florian Salbrechter",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
