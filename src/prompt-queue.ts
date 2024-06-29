@@ -26,6 +26,7 @@ class PromptQueue {
   }
 
   async enqueue(prompt: string, streamCallback: StreamCallback) {
+    this.shouldCancel = false 
     if (!this.session) {
       await this.init();
     }
@@ -34,7 +35,7 @@ class PromptQueue {
       const stream = this.session.promptStreaming(prompt);
       for await (const chunk of stream as any) {
         if (this.shouldCancel) {
-          console.log("usenano: canceled"); // i don't think this work. This is a good use case for a bunch of tests.
+          console.log("usenano: canceled, exiting!"); // i don't think this work. This is a good use case for a bunch of tests.
           if (cb) {
             cb(new Error("Operation canceled"), result);
           }
