@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { promptQueue } from "./prompt-queue";
 
 /**
  * 
@@ -25,11 +26,9 @@ export const useNano = (prompt: string) => {
 
     useEffect(() => {
         const go = async () => {
-            const session = await window.ai.createTextSession();
-            const stream = session.promptStreaming(prompt);
-            for await (const chunk of stream as any) {
-                setOutput(chunk);
-            }
+            promptQueue.enqueue(prompt, t => { 
+                setOutput(t)
+            })            
         }
         go()
     }, [prompt])
