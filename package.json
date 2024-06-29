@@ -1,6 +1,6 @@
 {
   "name": "use-nano",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A custom hook to get output from local in browser Gemini Nano LLM as tokens are generated.",
   "main": "dist/index.js",
   "types": "dist/index.ts",
