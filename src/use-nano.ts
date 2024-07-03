@@ -21,11 +21,19 @@ import { promptQueue } from "./prompt-queue";
  * }
  * ```
  */
-export const useNano = (prompt: string) => {
+
+export type UseNanoOptions = {
+    clearQueue?: boolean
+}
+
+export const useNano = (prompt: string, options: UseNanoOptions = {}) => {
     const [output, setOutput] = useState("")
 
     useEffect(() => {
         const go = async () => {
+            if (options.clearQueue) {
+                await promptQueue.clear()
+            }
             promptQueue.enqueue(prompt, t => { 
                 setOutput(t)
             })            
