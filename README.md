@@ -19,17 +19,10 @@ npm install https://github.com/freakyflow/use-nano
 
 # Usage
 
-Install the package. 
-
 ## Using the `useNano` hook
 Creating a simple, instant inference UI:
 
 ```jsx
-"use client";
-
-import { useNano } from "@/lib/use-nano/use-nano";
-import { useState } from "react";
-
 export default function TestPage() {
   const [input, setInput] = useState("Who are you?");
   const output = useNano(input);
